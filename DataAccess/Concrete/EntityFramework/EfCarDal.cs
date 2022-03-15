@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DataAccess.Concrete.InMemory
+namespace DataAccess.Concrete.EntityFramework
 {
-    public class InMemoryCarDal : ICarDal
+    public class EfCarDal : ICarDal
     {
         List<Car> _cars;
 
-        public InMemoryCarDal()
+        public EfCarDal()
         {
             _cars = new List<Car>
             {
@@ -22,15 +22,14 @@ namespace DataAccess.Concrete.InMemory
                 new Car{Id=5, BrandId=2, ColorId=4, DailyPrice=5000, ModelYear=2008, Description= "Deneme4" },
             };
         }
-
-        public void Add(Car car)
+        public void Add(Car entity)
         {
-            _cars.Add(car);
+            _cars.Add(entity);
         }
 
-        public void Delete(Car car)
+        public void Delete(Car entity)
         {
-            Car carToUpdate = _cars.SingleOrDefault(c => c.Id == car.Id);
+            Car carToUpdate = _cars.SingleOrDefault(c => c.Id == entity.Id);
             _cars.Remove(carToUpdate);
         }
 
@@ -46,22 +45,22 @@ namespace DataAccess.Concrete.InMemory
 
         public List<Car> GetCarsByBrandId(int id)
         {
-            throw new NotImplementedException();
+            return _cars.Where(c => c.BrandId == id).ToList();
         }
 
         public List<Car> GetCarsByColorId(int id)
         {
-            throw new NotImplementedException();
+            return _cars.Where(c => c.ColorId == id).ToList();
         }
 
-        public void Update(Car car)
+        public void Update(Car entity)
         {
-            Car carToUpdate = _cars.SingleOrDefault(c => c.Id == car.Id);
-            carToUpdate.BrandId = car.BrandId;
-            carToUpdate.ColorId = car.ColorId;
-            carToUpdate.DailyPrice = car.DailyPrice;
-            carToUpdate.ModelYear = car.ModelYear;
-            carToUpdate.Description = car.Description;
+            Car carToUpdate = _cars.SingleOrDefault(c => c.Id == entity.Id);
+            carToUpdate.BrandId = entity.BrandId;
+            carToUpdate.ColorId = entity.ColorId;
+            carToUpdate.DailyPrice = entity.DailyPrice;
+            carToUpdate.ModelYear = entity.ModelYear;
+            carToUpdate.Description = entity.Description;
         }
     }
 }
