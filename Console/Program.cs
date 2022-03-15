@@ -12,44 +12,17 @@ namespace Console
         static void Main(string[] args)
         {
             Car car1 = new Car {Id = 6, BrandId = 3, ColorId = 1, DailyPrice = 5, Description = "Yeni araba", ModelYear = 2022 };
+            Car car2 = new Car { Id = 7, BrandId = 3, ColorId = 2, DailyPrice = 15, Description = "Yeni araba2", ModelYear = 2022 };
+            Car car3 = new Car { Id = 8, BrandId = 4, ColorId = 3, DailyPrice = -5, Description = "Yeni araba3", ModelYear = 2022 };
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetAll())
+          carManager.Add(car3);
+            foreach (var entity in carManager.GetAll())
             {
-                System.Console.WriteLine(car.Description);
+                System.Console.WriteLine(entity.Description);
             }
-            System.Console.WriteLine("**********************************");
 
-            foreach (var car in carManager.GetById(2))
-            {
-                System.Console.WriteLine(car.Description);
-            }
-            System.Console.WriteLine("**********************************");
-
-            carManager.Add(car1);
-            foreach (var car in carManager.GetAll())
-            {
-                System.Console.WriteLine(car.Description);
-            }
-            System.Console.WriteLine("**********************************");
-
-            car1.Description = "Update";
-            carManager.Update(car1);
-            foreach (var car in carManager.GetAll())
-            {
-                System.Console.WriteLine(car.Description);
-            }
-            System.Console.WriteLine("**********************************");
-
-            carManager.Delete(car1);
-            foreach (var car in carManager.GetAll())
-            {
-                System.Console.WriteLine(car.Description);
-            }
-            System.Console.WriteLine("**********************************");
-
-
-
+    
         }
     }
 }

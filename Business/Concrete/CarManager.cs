@@ -23,7 +23,7 @@ namespace Business.Concrete
                 _carDal.Add(car);
             }
             else{
-                Console.WriteLine("Hata. Lütfen araba eklemeyi tekrar deneyin.");
+                Console.WriteLine("Hatalı giriş lütfen araba eklemeyi tekrar deneyin.");
             }
             
         }
@@ -40,17 +40,17 @@ namespace Business.Concrete
 
         public List<Car> GetById(int id)
         {
-            return _carDal.GetById(id);
+            return _carDal.GetAll(c => c.Id == id);
         }
 
         public List<Car> GetCarsByBrandId(int id)
         {
-            return _carDal.GetCarsByBrandId(id);
+            return _carDal.GetAll(c => c.BrandId == id);
         }
 
         public List<Car> GetCarsByColorId(int id)
         {
-            return _carDal.GetCarsByColorId(id);
+            return _carDal.GetAll(c => c.ColorId == id);
         }
 
         public void Update(Car car)
