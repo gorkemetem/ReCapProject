@@ -17,8 +17,8 @@ namespace Console
 
             //ColorTest();
 
-            CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetCarDetails())
+            CarManager carmanager = new CarManager(new EfCarDal());
+            foreach (var car in carmanager.GetCarDetails())
             {
                 System.Console.WriteLine(car.CarName + " / " + car.BrandName + " / " + car.ColorName + " / " + car.DailyPrice);
             }
@@ -49,6 +49,30 @@ namespace Console
             foreach (var car in carManager.GetAll())
             {
                 System.Console.WriteLine(car.Name + " / " + car.Description);
+            }
+            System.Console.WriteLine("************************************");
+            foreach (var car in carManager.GetById(1))
+            {
+                System.Console.WriteLine(car.Name);
+            }
+            System.Console.WriteLine("************************************");
+            Car newCar = new Car{ Name = "yeni araba 3", DailyPrice = 15, Description="deneme", BrandId=3, ColorId=2, Id=1, ModelYear=2021 };;
+            carManager.Add(newCar);
+            foreach (var car in carManager.GetAll())
+            {
+                System.Console.WriteLine(car.Name);
+            }
+            System.Console.WriteLine("************************************");
+            carManager.Delete(newCar);
+            foreach (var car in carManager.GetAll())
+            {
+                System.Console.WriteLine(car.Name);
+            }
+            System.Console.WriteLine("************************************");
+            carManager.Update(newCar);
+            foreach (var car in carManager.GetAll())
+            {
+                System.Console.WriteLine(car.Name);
             }
         }
     }
