@@ -18,17 +18,20 @@ namespace Console
             //ColorTest();
 
             CarManager carmanager = new CarManager(new EfCarDal());
-            foreach (var car in carmanager.GetCarDetails())
+            var result = carmanager.GetCarDetails();
+            foreach (var car in result.Data)
             {
                 System.Console.WriteLine(car.CarName + " / " + car.BrandName + " / " + car.ColorName + " / " + car.DailyPrice);
             }
+            System.Console.WriteLine(result.Message);
 
         }
 
         private static void ColorTest()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
-            foreach (var color in colorManager.GetAll())
+            var result = colorManager.GetAll();
+            foreach (var color in result.Data )
             {
                 System.Console.WriteLine(color.Name + " / " + color.Id);
             }
@@ -37,7 +40,8 @@ namespace Console
         private static void BrandTest()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            foreach (var brand in brandManager.GetAll())
+            var result = brandManager.GetAll();
+            foreach (var brand in result.Data)
             {
                 System.Console.WriteLine(brand.Name + " / " + brand.Id);
             }
@@ -46,31 +50,36 @@ namespace Console
         private static void CarTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetAll())
+            var result = carManager.GetAll();
+            foreach (var car in result.Data)
             {
                 System.Console.WriteLine(car.Name + " / " + car.Description);
             }
             System.Console.WriteLine("************************************");
-            foreach (var car in carManager.GetById(1))
+            var result1 = carManager.GetById(1);
+            foreach (var car in result1.Data)
             {
                 System.Console.WriteLine(car.Name);
             }
             System.Console.WriteLine("************************************");
             Car newCar = new Car{ Name = "yeni araba 3", DailyPrice = 15, Description="deneme", BrandId=3, ColorId=2, Id=1, ModelYear=2021 };;
             carManager.Add(newCar);
-            foreach (var car in carManager.GetAll())
+            var result2 = carManager.GetAll();
+            foreach (var car in result2.Data)
             {
                 System.Console.WriteLine(car.Name);
             }
             System.Console.WriteLine("************************************");
             carManager.Delete(newCar);
-            foreach (var car in carManager.GetAll())
+            var result3 = carManager.GetAll();
+            foreach (var car in result3.Data)
             {
                 System.Console.WriteLine(car.Name);
             }
             System.Console.WriteLine("************************************");
             carManager.Update(newCar);
-            foreach (var car in carManager.GetAll())
+            var result4 = carManager.GetAll();
+            foreach (var car in result4.Data)
             {
                 System.Console.WriteLine(car.Name);
             }
