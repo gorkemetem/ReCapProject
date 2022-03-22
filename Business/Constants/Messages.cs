@@ -20,5 +20,7 @@ namespace Business.Constants
         public static string ColorRemoved = "Color silindi";
         public static string ColorUpdated = "Color güncellendi";
         public static string ColorsListed = "Color listelendi";
+        public static string ReturnDateError = "Kiralama işlemi gerçekleşmedi";
+        public static string RentalAdded = "Kiralama işlemi başarılı.";
     }
 }

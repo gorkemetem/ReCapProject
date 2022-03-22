@@ -12,11 +12,33 @@ namespace Console
         static void Main(string[] args)
         {
             //CarTest();
-
             //BrandTest();
-
             //ColorTest();
+            //CarDetails();
+            //CustomerTest();
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.Add(new Rental { Id = 3 });
+            System.Console.WriteLine(result.Message);
+            result = rentalManager.Add(new Rental { Id = 4, ReturnDate = "22.03.2022" });
+            System.Console.WriteLine(result.Message);
+            
 
+        }
+
+        private static void CustomerTest()
+        {
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            customerManager.Add(new Customer { Id = 1, CompanyName = "Şirket1", UserId = 1 });
+            customerManager.Add(new Customer { Id = 2, CompanyName = "Şirket2", UserId = 1 });
+            var result = customerManager.GetAll();
+            foreach (var customer in result.Data)
+            {
+                System.Console.WriteLine(customer.CompanyName + " / " + customer.UserId);
+            }
+        }
+
+        private static void CarDetails()
+        {
             CarManager carmanager = new CarManager(new EfCarDal());
             var result = carmanager.GetCarDetails();
             foreach (var car in result.Data)
@@ -24,7 +46,6 @@ namespace Console
                 System.Console.WriteLine(car.CarName + " / " + car.BrandName + " / " + car.ColorName + " / " + car.DailyPrice);
             }
             System.Console.WriteLine(result.Message);
-
         }
 
         private static void ColorTest()
