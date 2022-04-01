@@ -22,5 +22,8 @@ namespace Business.Constants
         public static string ColorsListed = "Color listelendi";
         public static string ReturnDateError = "Kiralama işlemi gerçekleşmedi";
         public static string RentalAdded = "Kiralama işlemi başarılı.";
+        public static string CarCountOfBrandError = "Bir marka 10dan fazla araba ekleyemez";
+        public static string CarNameAlreadyExists = "Bu isimde zaten bir araba var";
+        public static string BrandLimitExceded = "Limite ulaşıldı";
     }
 }

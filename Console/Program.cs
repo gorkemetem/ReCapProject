@@ -39,7 +39,7 @@ namespace Console
 
         private static void CarDetails()
         {
-            CarManager carmanager = new CarManager(new EfCarDal());
+            CarManager carmanager = new CarManager(new EfCarDal(), new BrandManager(new EfBrandDal()));
             var result = carmanager.GetCarDetails();
             foreach (var car in result.Data)
             {
@@ -70,7 +70,7 @@ namespace Console
 
         private static void CarTest()
         {
-            CarManager carManager = new CarManager(new EfCarDal());
+            CarManager carManager = new CarManager(new EfCarDal(), new BrandManager(new EfBrandDal()));
             var result = carManager.GetAll();
             foreach (var car in result.Data)
             {
