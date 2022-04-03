@@ -24,7 +24,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.ReturnDateError);
             }
-
+            rental.RentDate = DateTime.Now;
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);
         }

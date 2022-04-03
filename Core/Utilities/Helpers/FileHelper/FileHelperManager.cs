@@ -29,6 +29,7 @@ namespace Core.Utilities.Helpers.FileHelper
 
         public string Upload(IFormFile file, string root)
         {
+
             if (file.Length > 0)
             {
                 if (!Directory.Exists(root))
