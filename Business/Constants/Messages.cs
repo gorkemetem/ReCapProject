@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -25,5 +26,6 @@ namespace Business.Constants
         public static string CarCountOfBrandError = "Bir marka 10dan fazla araba ekleyemez";
         public static string CarNameAlreadyExists = "Bu isimde zaten bir araba var";
         public static string BrandLimitExceded = "Limite ulaşıldı";
+        public static string AuthorizationDenied = "Yetkiniz yok.";
     }
 }
