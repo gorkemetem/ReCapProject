@@ -16,6 +16,7 @@ namespace Console
             //ColorTest();
             //CarDetails();
             //CustomerTest();
+            //Test
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
             var result = rentalManager.Add(new Rental { Id = 3 });
             System.Console.WriteLine(result.Message);
