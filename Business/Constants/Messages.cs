@@ -7,25 +7,25 @@ namespace Business.Constants
 {
     public static class Messages
     {
-        public static string MaintanenceTime = "Sistem bakımda";
-        public static string CarAdded = "Araba eklendi";
-        public static string CarRemoved = "Araba silindi";
-        public static string CarUpdated = "Araba güncellendi";
-        public static string CarsListed = "Arabalar listelendi";
-        public static string CarNameInvalid = "Araba ismi geçersiz";
-        public static string BrandAdded = "Brand eklendi";
-        public static string BrandRemoved = "Brand silindi";
-        public static string BrandUpdated = "Brand güncellendi";
-        public static string BrandsListed = "Brand listelendi";
-        public static string ColorAdded = "Color eklendi";
-        public static string ColorRemoved = "Color silindi";
-        public static string ColorUpdated = "Color güncellendi";
-        public static string ColorsListed = "Color listelendi";
-        public static string ReturnDateError = "Kiralama işlemi gerçekleşmedi";
-        public static string RentalAdded = "Kiralama işlemi başarılı.";
-        public static string CarCountOfBrandError = "Bir marka 10dan fazla araba ekleyemez";
-        public static string CarNameAlreadyExists = "Bu isimde zaten bir araba var";
-        public static string BrandLimitExceded = "Limite ulaşıldı";
-        public static string AuthorizationDenied = "Yetkiniz yok.";
+        public static string MaintanenceTime = "System is in maintenance";
+        public static string CarAdded = "New Car Added";
+        public static string CarRemoved = "Car Deleted";
+        public static string CarUpdated = "Car Updated";
+        public static string CarsListed = "Cars Listed";
+        public static string CarNameInvalid = "Car Name is Invalid";
+        public static string BrandAdded = "New Brand Added";
+        public static string BrandRemoved = "Brand Deleted";
+        public static string BrandUpdated = "Brand Updated";
+        public static string BrandsListed = "Brands Listed";
+        public static string ColorAdded = "New Color Added";
+        public static string ColorRemoved = "Color Deleted";
+        public static string ColorUpdated = "Color Updated";
+        public static string ColorsListed = "ColorsListed";
+        public static string ReturnDateError = "Rental Failed";
+        public static string RentalAdded = "Rental Successful.";
+        public static string CarCountOfBrandError = "A brand cannot add more than 10 cars";
+        public static string CarNameAlreadyExists = "There is already a car with this name";
+        public static string BrandLimitExceded = "Limit Reached";
+        public static string AuthorizationDenied = "You Are Not Authorized";
     }
 }
